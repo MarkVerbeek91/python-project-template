@@ -11,15 +11,18 @@ repos:
     -   id: check-added-large-files
 # Ruff
 -   repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.11.2
+    rev: v0.11.11
     hooks:
     -   id: ruff
+        name: ruff lint
+        args: [ --fix, --exit-non-zero-on-fix ]
     -   id: ruff-format
+        name: ruff format
 # Mypy
 -   repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.15.0
     hooks:
     -   id: mypy
-        # ignore test files
         args: [--config-file=./pyproject.toml]
+        # ignore test files
         exclude: "tests|integration|sandbox"
