@@ -11,10 +11,10 @@ project_intent:
     help: Give the high level goal of your project in one or two sentences.
 
 _tasks:
-    - "git init"
-#    - "uvx pre-commit install"
-#    - "uvx pre-commit autoupdate"
-    - "git add ."
+    - command: "git init"
+      working_directory: "{{ project_name }}"
+    - command: "git add ."
+      working_directory: "{{ project_name }}"
 
 #_exclude:
 #    - ".git"
