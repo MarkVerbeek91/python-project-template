@@ -25,6 +25,13 @@ dev = [
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.commitizen]
+version = "0.1.0"
+version_files = [
+    "src/{{ module_name }}/__init__.py",
+    "pyproject.toml:version",
+]
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/{{ module_name }}"]
 
