@@ -1,8 +1,0 @@
-[project]
-version = "0.2.5"
-
-[tool.commitizen]
-version = "0.2.5"
-version_files = [
-    "pyproject.toml:version",
-]
