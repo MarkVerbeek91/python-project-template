@@ -20,7 +20,7 @@ _exclude:
     - ".git"
     - ".gitignore"
     - "copier.yaml"
-    - "pyproject.yaml"
+    - "pyproject.toml"
     - ".pre-commit-config.yaml"
     - "AGENTS.md"
     - "~*"
