@@ -12,8 +12,8 @@ project_intent:
 
 _tasks:
     - "git init"
-    - "uvx pre-commit install"
-    - "uvx pre-commit autoupdate"
+#    - "uvx pre-commit install"
+#    - "uvx pre-commit autoupdate"
     - "git add ."
 
 _exclude:
