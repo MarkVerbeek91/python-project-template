@@ -5,3 +5,13 @@ project_name:
 module_name:
     type: str
     help: Wat is the name of your package?
+
+project_intent:
+    type: str
+    help: Give the high level goal of your project in one or two sentences.
+
+_tasks:
+    - "git init"
+    - "uvx pre-commit install"
+    - "uvx pre-commit autoupdate"
+    - "git add ."

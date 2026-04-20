@@ -1,0 +1,43 @@
+# AGENTS notes
+
+## Stack
+- Python `3.12` (`.python-version`).
+- Use `uv` as the package manager.
+- Use `hatchling` as the package builder.
+- Single-package `src/` layout: importable code lives in `src/lego_lang
+- Console entrypoint is `{{project_name}}.lower()`, which calls `{{module_name}}:main`.
+
+## Project Intent
+- {{project_intent}}
+
+## Coding Rules
+- Follow clean code rules.
+- Prefer short functions; target a maximum of 5 lines when practical.
+- Avoid more than 2 levels of indentation.
+- Use clear, intention-revealing names.
+- Keep files short and focused.
+- Always provide type annotations.
+- Document functions and classes with single line docstrings.
+
+## Testing Rules
+- Prefer tests that verify externally observable behavior rather than implementation details.
+- Unit tests should be in `tests/` and focus on individual functions or classes.
+- Always provide type annotations.
+- Use tests doubles in order of dummy, fake, stub, mock, spy, and then real objects as a last resort.
+- Use dependency injection to enable test doubles and avoid global state when practical.
+- Avoid monkeypatching or patching in tests; prefer explicit test doubles and fixtures.
+- Use `pytest` markers to categorize tests, e.g. `@pytest.mark.slow` or `@pytest.mark.component`. When tests need to do file io or network access, or heavy computation.
+
+## Documentation Rules
+- Keep documentation up to date with code changes.
+- Use Markdown files for documentation placed in `docs/`.
+- Use the `README.md` to provide high-level project information, setup instructions, and usage details.
+- For large changes to the repo, ask to write an ADR to document the decision and its rationale. Place it in `docs/adr/`
+
+## Verification Commands
+- Install dev dependencies in the generated project with `uv sync --dev`.
+- Run unit tests with `uv run pytest`.
+- Run component tests with `uv run pytest -m component`.
+- Run slow tests with `uv run pytest -m slow`.
+- Run type checking with `uv run mypy src`.
+- Run the same repo hooks users will hit with `uv run pre-commit run --all-files`.
