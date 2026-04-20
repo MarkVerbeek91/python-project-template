@@ -3,14 +3,14 @@
 repos:
 # Pre-commit
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
     -   id: trailing-whitespace
     -   id: check-yaml
     -   id: check-added-large-files
 # Ruff
 -   repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.11.11
+    rev: v0.15.11
     hooks:
     -   id: ruff
         name: ruff lint
@@ -19,7 +19,7 @@ repos:
         name: ruff format
 # Mypy
 -   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.15.0
+    rev: v1.20.1
     hooks:
     -   id: mypy
         args: [--config-file=./pyproject.toml]
@@ -27,7 +27,7 @@ repos:
         exclude: "tests|integration|sandbox"
 # Commitizen
 -   repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.10.0
+    rev: v4.13.10
     hooks:
       - id: commitizen
         stages: [commit-msg]
