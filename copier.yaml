@@ -15,3 +15,8 @@ _tasks:
     - "uvx pre-commit install"
     - "uvx pre-commit autoupdate"
     - "git add ."
+
+_exclude:
+    - ".pre-commit-config.yaml"
+    - "AGENTS.md"
+    - "project.yaml"
