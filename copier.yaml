@@ -17,6 +17,13 @@ _tasks:
     - "git add ."
 
 _exclude:
+    - ".git"
+    - ".gitignore"
+    - "copier.yaml"
+    - "project.yaml"
     - ".pre-commit-config.yaml"
     - "AGENTS.md"
-    - "project.yaml"
+    - "~*"
+    - "*.py[co]"
+    - "__pycache__"
+    - ".DS_Store"
