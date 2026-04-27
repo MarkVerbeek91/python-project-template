@@ -11,12 +11,15 @@ project_intent:
     help: Give the high level goal of your project in one or two sentences.
 
 _tasks:
-    - command: "git init"
+    - command: git init
       working_directory: "{{ project_name }}"
-    - command: "git add ."
+    - command: git add .
       working_directory: "{{ project_name }}"
-    - command: "uvx prek install"
+    - command: uvx prek install
       working_directory: "{{ project_name }}"
-    - command: "uvx prek autoupdate"
+    - command: uvx prek autoupdate
       working_directory: "{{ project_name }}"
-    - command: "rm -f .gitignore,.pre-commit-config.yaml,pyproject.toml,AGENTS.md"
+    - command: rm .gitignore,.pre-commit-config.yaml,pyproject.toml,AGENTS.md
+      when: "{{ _copier_conf.os in  ['linux', 'macos'] }}"
+    - command: Remove-Item -f .gitignore,.pre-commit-config.yaml,pyproject.toml,AGENTS.md
+      when: "{{ _copier_conf.os == 'windows' }}"
