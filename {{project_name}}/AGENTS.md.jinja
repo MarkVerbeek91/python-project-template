@@ -4,18 +4,18 @@
 - Python `3.12` (`.python-version`).
 - Use `uv` as the package manager.
 - Use `hatchling` as the package builder.
-- Single-package `src/` layout: importable code lives in `src/lego_lang
-- Console entrypoint is `{{project_name}}.lower()`, which calls `{{module_name}}:main`.
+- Single-package `src/` layout: importable code lives in `src/{{module_name}}`
+- Console entrypoint is `{{module_name}}`, which calls `{{module_name}}:main`.
 
 ## Project Intent
 - {{project_intent}}
 
 ## Coding Rules
-- Follow clean code rules.
 - Prefer short functions; target a maximum of 5 lines when practical.
-- Avoid more than 2 levels of indentation.
+- Avoid more than 2 levels of indentation when practical.
 - Use clear, intention-revealing names.
-- Keep files short and focused.
+- Keep files short and focused. One class per file is ideal, but use judgment to group related code togethe.
+- Order the code that the high level code is on top of the file, and less important details (e.g. helper functions) at the bottom.
 - Always provide type annotations.
 - Document functions and classes with single line docstrings.
 
@@ -37,7 +37,6 @@
 ## Verification Commands
 - Install dev dependencies in the generated project with `uv sync --dev`.
 - Run unit tests with `uv run pytest`.
-- Run component tests with `uv run pytest -m component`.
 - Run slow tests with `uv run pytest -m slow`.
 - Run type checking with `uv run mypy src`.
 - Run the same repo hooks users will hit with `uv run pre-commit run --all-files`.

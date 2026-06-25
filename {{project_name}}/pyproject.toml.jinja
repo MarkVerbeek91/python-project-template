@@ -19,7 +19,7 @@ dev = [
 ]
 
 [project.scripts]
-{{ project_name }} = "{{ module_name }}:main"
+{{ module_name }} = "{{ module_name }}:main"
 
 [build-system]
 requires = ["hatchling"]
@@ -37,13 +37,12 @@ packages = ["src/{{ module_name }}"]
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "-ra --cov={{ module_name }} --cov-report=term-missing --import-mode=importlib -m 'not slow and not component'"
+addopts = "-ra --cov={{ module_name }} --cov-report=term-missing --import-mode=importlib -m 'not slow'"
 testpaths = [
     "tests",
 ]
 markers = [
     "slow: mark test as slow test",
-    "component: mark test as component test",
 ]
 
 [tool.mypy]
